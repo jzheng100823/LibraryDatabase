@@ -17,9 +17,10 @@
         <h1>Library Database Website</h1>
 
         <div class="test">
-            <p>Site is using MySQL and PHP. Books in Database so far:</p>
+            <h3>Site is using MySQL and PHP. Books in Database so far:</h3>
         </div>
 
+        <p>
         <?php
             $sql = "SELECT title FROM book;";
             $result = mysqli_query($conn, $sql);
@@ -31,9 +32,9 @@
                 }
             }
         ?>
-        <hr />
+        </p>
+        <hr>
 
     </body>
 
 </html>
-
