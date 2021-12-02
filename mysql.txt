@@ -1,0 +1,36 @@
+create table author
+	(author_id	varchar(4),
+	 first_name	varchar(20),
+	 last_name	varchar(20),
+	 nationality	varchar(30),
+	 primary key (author_id)
+	);
+
+create table publisher
+	(publisher_id	varchar(4),
+	 pub_name	varchar(20),
+	 location	varchar(30),
+	 primary key (publisher_id)
+	);
+
+create table book
+	(book_id	varchar(8),
+	 title		varchar(50),
+	 author_id	varchar(8),
+	 publish_year	numeric(4,0),
+	 publisher_id	varchar(8),
+	 price		numeric(5,2),	
+	 primary key (book_id),
+	 foreign key (author_id) references author(author_id)
+		on delete cascade,
+	 foreign key (publisher_id) references publisher(publisher_id)
+		on delete cascade
+	);
+
+create table purchased
+	(book_id	varchar(8),
+	 title		varchar(50),
+	 price		numeric(5,2),
+	 foreign key (book_id) references book(book_id)
+		on delete cascade
+	);
