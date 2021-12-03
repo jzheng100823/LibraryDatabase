@@ -35,3 +35,10 @@ create table purchased
 	 foreign key (book_id) references book(book_id)
 		on delete cascade
 	);
+
+insert into author values ('1', 'Jane', 'Austen', 'English');
+insert into author values ('2', 'Harper', 'Lee', 'American');
+insert into publisher values ('1', 'Thomas Egerton', 'London');
+insert into publisher values ('2', 'J. B. Lipincott & Co.', 'Pennsylvania');
+insert into book values ('1', 'Pride and Prejudice', '1', '1813', '1', '16.91', 'images/prideandprejudice.jpg');
+insert into book values ('2', 'To Kill a Mockingbird', '2', '1960', '2', '5.80', 'images/mockingbird.jpg');
