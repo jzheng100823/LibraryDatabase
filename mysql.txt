@@ -19,7 +19,8 @@ create table book
 	 author_id	varchar(8),
 	 publish_year	numeric(4,0),
 	 publisher_id	varchar(8),
-	 price		numeric(5,2),	
+	 price		numeric(5,2),
+	 image_path	varchar(200),
 	 primary key (book_id),
 	 foreign key (author_id) references author(author_id)
 		on delete cascade,
