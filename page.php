@@ -35,7 +35,7 @@
         //print($publocation);
         if ($queryResults > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<div class='Books_list'>
+                echo "<div class='book_data'>
                     <h3>".$row['title']."</h3>
                     <p>Author: ".$row['first_name']. "&nbsp;" .$row['last_name']."<p>
                     <p style='color:green'>Price: $".$row['price']."</p>

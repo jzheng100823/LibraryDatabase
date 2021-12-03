@@ -4,7 +4,7 @@
 
 <h1>Search page</h1>
 
-<div class="Books">
+<div class="books">
 <?php
     if(isset($_POST['submit-search'])){
         $search = mysqli_real_escape_string($conn, $_POST['search']);
@@ -17,14 +17,15 @@
 
         if($queryResult > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<a href='page.php?book_id=".$row['book_id']."&publisher_id=".$row['publisher_id']."'><div class='Books_list'>
+                echo "<a href='page.php?book_id=".$row['book_id']."&publisher_id=".$row['publisher_id']."'><div class='test2'>
                     <h3>".$row['title']."</h3>
                     <p>".$row['first_name']."&nbsp;" .$row['last_name']."</p>
                     <p>".$row['price']."<p>
                 </div></a>";
             }
         } else{
-            echo "There are no results matching your search!";
+            echo "<p style='color:red' 'font-size:20px'>There are no results matching your search!</p>";
+            echo "<button onclick=\"location.href='./'\">Search again</button>";
         }
     }
 ?>

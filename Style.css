@@ -7,6 +7,7 @@
 h1 {
     font-weight: bold;
     font-size: 50px;
+    padding-left: 20px;
 }
 
 h1.blue {
@@ -17,8 +18,8 @@ h1.blue {
 
 img {
     float: left;
-    height: 300px;
-    padding: 0 10px 0 0;
+    height: 350px;
+    padding: 0 10px 10px 5px;
 }
 
 .book_list {
@@ -41,4 +42,17 @@ img {
 }
 h2.catelog {
     margin: 2px;
+}
+
+.books {
+    padding-left: 25px;
+}
+
+/*page.php classes*/
+h1.booktitle {
+    padding-left: 10px;
+}
+
+.container {
+    padding-left: 15px;
 }
