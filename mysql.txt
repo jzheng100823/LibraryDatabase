@@ -8,8 +8,8 @@ create table author
 
 create table publisher
 	(publisher_id	varchar(4),
-	 pub_name	varchar(20),
-	 location	varchar(50),
+	 pub_name	varchar(50),
+	 location	varchar(30),
 	 primary key (publisher_id)
 	);
 
