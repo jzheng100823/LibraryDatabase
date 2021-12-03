@@ -3,7 +3,7 @@
 ?>
 <br><br><br><br>
 <div class="homepage">
-    <h1>Bookstore Home Page</h1>
+    <h1 class="blue">Bookstore Home Page</h1>
     <h2 class="catelog">Search our catelog:</h2>
     <div class="searchbox">
         <form action = "search.php" method="POST">
@@ -22,7 +22,7 @@
 
         if ($queryResults > 0){
             while($row = mysqli_fetch_assoc($result)){
-                echo "<li>".$row['title']."</li> <br>";
+                echo "<a href='page.php?book_id=".$row['book_id']."&publisher_id=".$row['publisher_id']."'><li>".$row['title']."</li></a> <br>";
             }
         }
      ?>
