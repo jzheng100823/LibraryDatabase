@@ -1,6 +1,11 @@
 <?php
     include 'header.php';
+    include 'footer.php';
 ?>
+
+<!DOCTYPE html>
+<html>
+
 <br><br><br><br>
 <div class="homepage">
     <h1 class="blue">Bookstore Home Page</h1>

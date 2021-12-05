@@ -1,5 +1,6 @@
 <?php
     include 'header.php';
+    include 'footer.php';
 ?>
 
 <h1>Book</h1>
@@ -45,12 +46,28 @@
                     <p>Name: ".$pubname."<p>
                     <p>Location: ".$publocation."<p>
                 </div>";
+                $booktitle = $row['title'];
+                $bookprice = $row['price'];
             }
         }
         else echo "something is broken"
      ?>
 </div>
-    </div id="home_button">
+    <div id="home_button">
         <button onclick= "location.href='./'">Return Home</button>
+    </div>
+    <br><br>
+    <div class="add_to_cart">
+        <form method="POST">
+            <input type="submit" name="addbook" value="Add To Cart">
+        </form>
+    </div>
+    <?php
+        if(isset($_POST['addbook'])) {
+            echo "&emsp;&emsp;You purchased this book!";
+            $stmt = $conn->prepare("INSERT into purchased values ('$bookid','$booktitle','$bookprice')");
+            $stmt->execute();
+        }
+    ?>
 </body>
 </html>

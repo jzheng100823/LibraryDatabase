@@ -1,8 +1,12 @@
 <?php
     include 'header.php';
+    include 'footer.php';
 ?>
 
 <h1>Search page</h1>
+
+<!DOCTYPE html>
+<html>
 
 <div class="books">
 <?php
