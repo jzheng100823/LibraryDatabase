@@ -32,7 +32,7 @@ html,body {
 }
 
 .purchase {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     vertical-align: middle;
 }
 
@@ -88,6 +88,13 @@ img {
     padding-left: 20px;
 }
 
+.login_button button {
+    background-color: #f44336;
+    color: white;
+    width: 100px;
+    height: 20px;
+}
+
 h2.catelog {
     margin: 2px;
 }
@@ -121,4 +128,12 @@ h4.checkout_books {
     text-align: center;
     margin: 1;
     float: center;
+}
+
+/*login.php*/
+.login-stuff {
+    padding-left: 30px;
+}
+.login-stuff input {
+    height: 20px;
 }

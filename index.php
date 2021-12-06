@@ -5,8 +5,10 @@
 
 <!DOCTYPE html>
 <html>
-
-<br><br><br><br>
+<div id="login_button">
+        <button onclick= "location.href='login.php'">Staff login</button>
+</div>
+<br><br><br>
 <div class="homepage">
     <h1 class="blue">Bookstore Home Page</h1>
     <h2 class="catelog">Search our catelog:</h2>
