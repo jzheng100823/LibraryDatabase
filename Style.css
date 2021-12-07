@@ -88,6 +88,14 @@ img {
     padding-left: 20px;
 }
 
+.home_button3 {
+    padding-left: 50px;
+}
+
+.staffpage {
+    padding-left: 20px;
+}
+
 .login_button button {
     background-color: #f44336;
     color: white;
@@ -117,6 +125,10 @@ h1.booktitle {
 .checkout_books {
     padding-left: 30px;
     margin: 0;
+}
+.checkout_books form, h4 {
+    display: inline-block;
+    margin: 10px 0;
 }
 
 h4.checkout_books {

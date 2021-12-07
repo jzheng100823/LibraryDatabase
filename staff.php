@@ -15,8 +15,9 @@ $result = mysqli_stmt_get_result($stmt);
 $check = mysqli_fetch_array($result);
 if(isset($check)){
 	?>
-    <h2>Input the following information to add a book to the database:</h2>
-    <form method ="post">
+    <div class="staffpage">
+        <h2>Input the following information to add a book to the database:</h2>
+        <form method ="post">
         Book Info: <br>
         <input type = "text" name = "book_id" placeholder="Book ID"> &nbsp;
         <input type = "text" name = "title" placeholder="Title"> &nbsp;
@@ -36,10 +37,18 @@ if(isset($check)){
         <input type = "text" name = "location" placeholder="Location">
         <br><br>
     
-        <input type = "submit" name="newbook" value = "Submit">
-    </form><br><br>
-    <div id="home_button">
-        <button onclick= "location.href='./'">Logout</button>
+        <input type = "submit" name="newbook" value = "Submit Book">
+        <br><br><hr>
+
+        Update Book Price: <br>
+        <input type = "text" name = "book_id2" placeholder="Book ID"> &nbsp;
+        <input type = "text" name = "price2" placeholder="New Price">
+        <br><br>
+        <input type = "submit" name="newprice" value = "Submit Price">
+        </form><br><br><br>
+        <div class="home_button3">
+            <button onclick= "location.href='./'">Logout</button>
+        </div>
     </div>
     <?php
 } else {
@@ -66,6 +75,14 @@ if(isset($_POST['newbook'])) {
     $sqlNewPublisher->execute();
     $sqlNewBook = $conn->prepare("INSERT INTO book VALUES ('$bookid', '$title', '$authorid', '$pubyear', '$pubid', '$price', '')");
     $sqlNewBook->execute();
+    header("Location: index.php");
+}
+
+if(isset($_POST['newprice'])) {
+    $bookid2 = $_POST["book_id2"];
+    $price2 = $_POST["price2"];
+    $sqlNewPrice = $conn->prepare("UPDATE book SET price = $price2 WHERE book_id = $bookid2");
+    $sqlNewPrice->execute();
     header("Location: index.php");
 }
 ?>

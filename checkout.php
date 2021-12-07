@@ -15,7 +15,7 @@
         <button onclick= "location.href='./'">Return Home</button>
     </div>
     <?php
-        $sqlAll = "SELECT title, price FROM purchased";
+        $sqlAll = "SELECT item_id, title, price FROM purchased";
         $sqlPriceTotal = "SELECT sum(price) from purchased";
         $sqlCount = "SELECT * from CartSize"; //CartSize is a view
         $resultAll = mysqli_query($conn, $sqlAll);
@@ -40,10 +40,25 @@
         }
 
         foreach ($resultAll as $rowAll) {
+            $currentbook = $rowAll['item_id'];
             echo "<div class='checkout_books'>
-            <h4><li>".$rowAll['title']."</li></h4>
+            <h4><li>".$rowAll['title']."</li></h4>&nbsp;&nbsp;<form method='POST'><input type='submit' name='".$currentbook."' value='X'></form>
             <p style='color:green'>Price: $".$rowAll['price']."</p>
             </div>";
+            //echo "Current book is: " .$currentbook;
+            if(isset($_POST[$currentbook])) {
+                echo "You deleted book ".$currentbook;
+                $sqlDelBook = $conn->prepare("DELETE from purchased WHERE item_id='$currentbook'");
+                $sqlDelBook->execute();
+                header("Location: checkout.php");
+                //echo " Titled: ".$rowAll['title'];
+                //foreach ($_POST['removebook']) {
+                //    $stmt = $conn->prepare("DELETE from purchased WHERE book_id='$rowAll[book_id]'");
+                //    $stmt->execute();
+                //}
+                //header("Location: complete.php");
+            
+            }
         }
         
     ?>
@@ -59,7 +74,7 @@
     </div>
     <?php
         if(isset($_POST['buybook'])) {
-            $stmt = $conn->prepare("DELETE FROM purchased");
+            $stmt = $conn->prepare("CALL ClearCart"); //ClearCart Procedure
             $stmt->execute();
             header("Location: complete.php");
         }
