@@ -64,7 +64,7 @@
     </div>
     <?php
         if(isset($_POST['addbook'])) {
-            echo "&emsp;&emsp;You purchased this book!";
+            echo "&emsp;&emsp;You added this book to your cart!";
             $stmt = $conn->prepare("INSERT into purchased values ('$bookid','$booktitle','$bookprice')");
             $stmt->execute();
         }

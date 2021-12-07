@@ -17,7 +17,7 @@
     <?php
         $sqlAll = "SELECT title, price FROM purchased";
         $sqlPriceTotal = "SELECT sum(price) from purchased";
-        $sqlCount = "SELECT COUNT(book_id) from purchased";
+        $sqlCount = "SELECT * from CartSize"; //CartSize is a view
         $resultAll = mysqli_query($conn, $sqlAll);
         $rowAll = $resultAll->fetch_assoc();
 

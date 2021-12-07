@@ -5,7 +5,7 @@
 
 <!DOCTYPE html>
 <html>
-<div id="login_button">
+<div class="login_button">
         <button onclick= "location.href='login.php'">Staff login</button>
 </div>
 <br><br><br>
@@ -34,5 +34,6 @@
         }
      ?>
 </div>
+<br><br><br><br>
 </body>
 </html>
